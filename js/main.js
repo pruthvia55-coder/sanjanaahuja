@@ -298,3 +298,71 @@ brush.style.opacity=1;
 createSpark(touch.clientX,touch.clientY);
 
 });
+
+
+<script>
+
+document.getElementById("whatsappForm").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const reason =
+        document.getElementById("reason").value;
+
+    const message =
+        document.getElementById("message").value.trim();
+
+
+    /*
+       IMPORTANT:
+       Replace this with Sanjana's WhatsApp number.
+
+       Use country code WITHOUT +
+       
+       Example:
+       919876543210
+    */
+
+    const whatsappNumber = "919359595319";
+
+
+    let whatsappMessage =
+        "Hello Sanjana! 👋\n\n" +
+
+        "I would like to make an enquiry.\n\n" +
+
+        "👤 Name: " + name + "\n" +
+
+        "💄 Reason: " + reason;
+
+
+    if(message) {
+
+        whatsappMessage +=
+            "\n\n💬 Message: " + message;
+
+    }
+
+
+    whatsappMessage +=
+        "\n\nLooking forward to hearing from you. ✨";
+
+
+    const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(whatsappMessage);
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+});
+
+</script>
